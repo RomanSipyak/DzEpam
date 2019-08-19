@@ -26,11 +26,20 @@ namespace Training1.Task5
 
         public static ComplexNumber operator /(ComplexNumber number1, ComplexNumber number2)
         {
-            return new ComplexNumber(
+            try
+            {
+              return  new ComplexNumber(
                        (number1.real * number2.real + number1.imaginary * number2.imaginary) /
                        ((number2.real * number2.real) + (number2.imaginary * number2.imaginary)),
                        (number1.imaginary * number2.real - number1.real * number2.imaginary) /
                        ((number2.real * number2.real) + (number2.imaginary * number2.imaginary)));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);    
+                return new ComplexNumber(0,0);
+            }
+             
         }
 
         public static ComplexNumber operator *(ComplexNumber number1, ComplexNumber number2)

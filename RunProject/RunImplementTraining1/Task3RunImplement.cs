@@ -14,12 +14,19 @@ namespace RunProject.RunImplementTraining1
             string exit;
             do
             {
-                Console.WriteLine("******Circle Carcualator******");
-                Console.WriteLine("~~~Write Circle radius~~");
-                double radius = (Convert.ToDouble(Console.ReadLine()));
-                Circle circle = new Circle();
-                Console.WriteLine($"Area ==> {circle.GetArea(radius)}");
-                Console.WriteLine($"Length ==> {circle.GetLength(radius)}");
+                try
+                {
+                    Console.WriteLine("******Circle Carcualator******");
+                    Console.WriteLine("~~~Write Circle radius~~");
+                    double radius = (Convert.ToDouble(Console.ReadLine()));
+                    Circle circle = new Circle();
+                    Console.WriteLine($"Area ==> {circle.GetArea(radius)}");
+                    Console.WriteLine($"Length ==> {circle.GetLength(radius)}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 Console.WriteLine($"If You want exit type exit , If not type anything");
                 exit = Console.ReadLine();
             } while (!exit.Equals("exit"));
