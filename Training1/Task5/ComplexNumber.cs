@@ -10,11 +10,11 @@ namespace Training1.Task5
     {
         #region Fields&&Constructor
 
-        private int real;
+        private double real;
 
-        private int imaginary;
+        private double imaginary;
 
-        public ComplexNumber(int real, int imaginary)
+        public ComplexNumber(double real, double imaginary)
         {
             this.real = real;
             this.imaginary = imaginary;

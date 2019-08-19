@@ -18,13 +18,13 @@ namespace RunProject.RunImplementTraining1
                 {
                     Console.WriteLine("******Complex Carcualator******");
                     Console.WriteLine("~~~Write real part of number1~~");
-                    int real1 = (Convert.ToInt32(Console.ReadLine()));
+                    double real1 = (Convert.ToDouble(Console.ReadLine()));
                     Console.WriteLine("~~~Write imaginary part of number1~~");
-                    int imaginary1 = (Convert.ToInt32(Console.ReadLine()));
+                    double imaginary1 = (Convert.ToDouble(Console.ReadLine()));
                     Console.WriteLine("~~~Write real part of number2~~");
-                    int real2 = (Convert.ToInt32(Console.ReadLine()));
+                    double real2 = (Convert.ToDouble(Console.ReadLine()));
                     Console.WriteLine("~~~Write imaginary part of number2~~");
-                    int imaginary2 = (Convert.ToInt32(Console.ReadLine()));
+                    double imaginary2 = (Convert.ToDouble(Console.ReadLine()));
 
                     ComplexNumber number1 = new ComplexNumber(real1, imaginary1);
                     ComplexNumber number2 = new ComplexNumber(real2, imaginary2);
