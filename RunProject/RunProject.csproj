@@ -70,6 +70,8 @@
     <Compile Include="RunImplementTraining2\Task2RunImplement.cs" />
     <Compile Include="RunImplementTraining2\Task3RunImplement.cs" />
     <Compile Include="RunImplementTraining2\Task4RunImplement.cs" />
+    <Compile Include="RunImplementTraining3\Task1RunImplement.cs" />
+    <Compile Include="RunImplementTraining3\Task3RunImplement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -82,6 +84,10 @@
     <ProjectReference Include="..\Training2\Training2.csproj">
       <Project>{7c70e0c4-6346-48f6-8611-9108fb9ffb82}</Project>
       <Name>Training2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Training3\Training3.csproj">
+      <Project>{8110c88c-87e8-49cc-b1cf-ecd5bf93dd7a}</Project>
+      <Name>Training3</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

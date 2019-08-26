@@ -25,7 +25,9 @@ namespace RunProject
             menu.Add("T2Task2", new RunImplementTraining2.Task2RunImplement());
             menu.Add("T2Task3", new RunImplementTraining2.Task3RunImplement());
             menu.Add("T2Task4", new RunImplementTraining2.Task4RunImplement());
-         
+            menu.Add("T3Task1&2", new RunImplementTraining3.Task1RunImplement());
+            menu.Add("T3Task3", new RunImplementTraining3.Task3RunImplement());
+
 
             bool exit = true;
             do
@@ -39,6 +41,8 @@ namespace RunProject
                 Console.WriteLine("If you want run Training2 Task2 write T2Task2 ");
                 Console.WriteLine("If you want run Training2 Task3 write T2Task3 ");
                 Console.WriteLine("If you want run Training2 Task4 write T2Task4 ");
+                Console.WriteLine("If you want run Training3 Task1&2 write T3Task1&2 ");
+                Console.WriteLine("If you want run Training3 Task3 write T3Task3 ");
                 string key = Console.ReadLine();
               
                 if (menu.ContainsKey(key))
