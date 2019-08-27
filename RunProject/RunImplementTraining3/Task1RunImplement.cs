@@ -7,8 +7,22 @@ using Training3;
 
 namespace RunProject.RunImplementTraining3
 {
-    class Task1RunImplement : RunCase
+    public class Task1RunImplement : RunCase
     {
+        private static readonly Random Randomize = new Random();
+
+        private static readonly object SyncLock = new object();
+
+        private List<Person> persons = new List<Person>();
+
+        public static int RandomNumber(int min, int max)
+        {
+            lock (SyncLock)
+            { // synchronize
+                return Randomize.Next(min, max);
+            }
+        }
+
         public bool Run()
         {
             string exit;
@@ -16,24 +30,23 @@ namespace RunProject.RunImplementTraining3
             {
                 Console.WriteLine("******Trainig3 Task1******");
 
-                List<Person> persons = new List<Person>();
                 for (int i = 0; i < 7; i++)
                 {
-                    persons.Add(RandomPerson());
+                    this.persons.Add(this.RandomPerson());
                 }
-                
-                persons.ForEach(p =>
+
+                this.persons.ForEach(p =>
                 {
                     Console.WriteLine($"Person № => {persons.IndexOf(p)}");
                     Console.WriteLine(p);
                 });
 
-                //Task2
-                persons.AddRange(new List<Person> { RandomPerson(), RandomPerson() });
+                ////Task2
+                this.persons.AddRange(new List<Person> { this.RandomPerson(), this.RandomPerson() });
 
-                persons.ForEach(p =>
+                this.persons.ForEach(p =>
                 {
-                    Console.WriteLine($"Person № => {persons.IndexOf(p)}");
+                    Console.WriteLine($"Person № => {this.persons.IndexOf(p)}");
                     Console.WriteLine(p);
                 });
 
@@ -51,13 +64,14 @@ namespace RunProject.RunImplementTraining3
             {
                 phone += RandomNumber(1, 10);
             }
+
             return phone;
         }
 
         public Person RandomPerson()
         {
             Person person = new Person();
-            person.Name = RandomString(7);
+            person.Name = this.RandomString(7);
             person.Age = RandomNumber(1, 101);
             person.PhoneNumbers = new List<string>();
             for (int i = 0; i < 5; i++)
@@ -73,24 +87,15 @@ namespace RunProject.RunImplementTraining3
         public string RandomString(int num_letters)
         {
             char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".ToCharArray();
-            string word = "";
+            string word = string.Empty;
             Random rand = new Random();
             for (int j = 1; j <= num_letters; j++)
             {
                 int letter_num = RandomNumber(0, letters.Length);
                 word += letters[letter_num];
             }
-            return word;
-        }
 
-        private static readonly Random random = new Random();
-        private static readonly object syncLock = new object();
-        public static int RandomNumber(int min, int max)
-        {
-            lock (syncLock)
-            { // synchronize
-                return random.Next(min, max);
-            }
+            return word;
         }
     }
 }
