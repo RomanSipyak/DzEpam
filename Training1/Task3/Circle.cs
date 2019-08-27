@@ -12,12 +12,26 @@ namespace Training1.Task3
 
         public double GetArea(double radius)
         {
-            return PI * radius * radius;
+            if ( radius <= 0)
+            {
+                return double.NaN;
+            }
+            else
+            {
+                return PI * radius * radius;
+            }
         }
 
         public double GetLength(double radius)
         {
-            return 2 * PI * radius;
+            if (radius <= 0)
+            {
+                return double.NaN;
+            }
+            else
+            {
+                return 2 * PI * radius;
+            }
         }
     }
 }
