@@ -54,12 +54,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task1\RectangleTests.cs" />
     <Compile Include="Task2\RectangleTests.cs" />
+    <Compile Include="Task3\CircleTests.cs" />
+    <Compile Include="Task4\CircleTests.cs" />
+    <Compile Include="Task4\RectangleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Training1\Training1.csproj">
       <Project>{1bedd7a0-8f41-4f29-8ecc-f8eee2ba9708}</Project>
       <Name>Training1</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Task5\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
